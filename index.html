@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSKART – Půjčovna motokár Mošnov-Albrechtičky | Nejdelší letištní trať v ČR</title>
+    <meta name="description"
+        content="PSKART – adrenalinové motokáry na nejdelší letištní trati v regionu. Přes 600 metrů, motory Honda 200, rychlost až 70 km/h. Rezervujte si jízdu!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hondaRed: '#E4002B',
+                        asphaltDark: '#0b0c10',
+                        asphaltLight: '#1f2833',
+                        pureWhite: '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Rajdhani', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-asphaltDark text-pureWhite font-body">
+
+    <!-- NAVIGACE -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="#hero" class="flex items-center">
+                    <img src="images/pskart-logo-small2.png" alt="PSKART logo" class="h-10 md:h-12">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about"
+                        class="text-sm uppercase tracking-wider text-gray-300 hover:text-hondaRed transition-colors">O
+                        nás</a>
+                    <a href="#technika"
+                        class="text-sm uppercase tracking-wider text-gray-300 hover:text-hondaRed transition-colors">Technika</a>
+                    <a href="#cenik"
+                        class="text-sm uppercase tracking-wider text-gray-300 hover:text-hondaRed transition-colors">Ceník</a>
+                    <a href="#galerie"
+                        class="text-sm uppercase tracking-wider text-gray-300 hover:text-hondaRed transition-colors">Galerie</a>
+                    <a href="#kontakt"
+                        class="text-sm uppercase tracking-wider text-gray-300 hover:text-hondaRed transition-colors">Kontakt</a>
+                    <a href="#kontakt"
+                        class="bg-hondaRed hover:bg-red-700 text-white font-heading font-semibold text-sm uppercase px-5 py-2 rounded transition-all hover:scale-105">Rezervovat</a>
+                </div>
+                <button id="hamburger" class="md:hidden text-white" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-asphaltDark border-t border-white/10">
+            <div class="flex flex-col items-center gap-4 py-6">
+                <a href="#about"
+                    class="nav-link text-lg font-heading uppercase tracking-wider hover:text-hondaRed transition-colors">O
+                    nás</a>
+                <a href="#technika"
+                    class="nav-link text-lg font-heading uppercase tracking-wider hover:text-hondaRed transition-colors">Technika</a>
+                <a href="#cenik"
+                    class="nav-link text-lg font-heading uppercase tracking-wider hover:text-hondaRed transition-colors">Ceník</a>
+                <a href="#galerie"
+                    class="nav-link text-lg font-heading uppercase tracking-wider hover:text-hondaRed transition-colors">Galerie</a>
+                <a href="#kontakt"
+                    class="nav-link text-lg font-heading uppercase tracking-wider hover:text-hondaRed transition-colors">Kontakt</a>
+                <a href="#kontakt"
+                    class="nav-link bg-hondaRed hover:bg-red-700 text-white font-heading font-semibold uppercase px-6 py-2 rounded">Rezervovat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero"
+        class="hero-bg flex items-center justify-center min-h-[85vh] sm:min-h-screen text-center px-4 pt-16">
+        <div class="max-w-3xl mx-auto">
+            <p
+                class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3">
+                <i class="fa-solid fa-location-dot mr-1"></i> Odstavná plocha letiště Mošnov
+            </p>
+            <h1 class="font-heading font-bold text-3xl sm:text-5xl md:text-6xl leading-tight uppercase mb-4 sm:mb-5">
+                Adrenalin na <span class="text-hondaRed">nejdelší letištní</span> trati v regionu
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto mb-6 sm:mb-8">
+                Motory Honda 200 s výkonem 6,5k vás vystřelí až na <strong class="text-white">70 km/h</strong> po více
+                než 600 metrech asfaltu.
+            </p>
+            <a href="#kontakt"
+                class="inline-block bg-hondaRed hover:bg-red-700 text-white font-heading font-bold text-base sm:text-lg uppercase px-6 sm:px-8 py-3 sm:py-4 rounded transition-all hover:scale-105">
+                <i class="fa-solid fa-calendar-check mr-1"></i> Rezervovat jízdu
+            </a>
+        </div>
+    </section>
+
+    <!-- O NÁS / BENTO GRID -->
+    <section id="about" class="py-12 sm:py-20 md:py-28 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-14">
+                <p class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">
+                    Proč právě my
+                </p>
+                <h2 class="font-heading font-bold text-2xl sm:text-3xl md:text-4xl uppercase">Parametry, které <span
+                        class="text-hondaRed">nemá nikdo</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 sm:col-span-2 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-road text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-1">Přes 600 m trati</h3>
+                    <p class="text-gray-400 text-sm">Jedna z nejdelších motokárových tratí v ČR na bývalé odstavné ploše
+                        letiště Mošnov.</p>
+                </div>
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-users text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-lg uppercase mb-1">6 motokár současně</h3>
+                    <p class="text-gray-400 text-sm">Na trati může závodit až 6 jezdců najednou.</p>
+                </div>
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-gamepad text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-lg uppercase mb-1">Snadné ovládání</h3>
+                    <p class="text-gray-400 text-sm">Pouze plyn a brzda – automatická odstředivá spojka.</p>
+                </div>
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 sm:col-span-2 lg:col-span-2 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-plane-departure text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-1">Sledujte letadla z našeho zázemí</h3>
+                    <p class="text-gray-400 text-sm">Z posezení u dráhy můžete pozorovat starty a přistání letadel na
+                        nedalekém letišti.</p>
+                </div>
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-gauge-high text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-lg uppercase mb-1">Až 70 km/h</h3>
+                    <p class="text-gray-400 text-sm">Maximální rychlost na naší trati.</p>
+                </div>
+                <div
+                    class="bg-asphaltLight rounded-lg p-6 text-center border border-white/5 hover:border-hondaRed/20 transition-colors">
+                    <i class="fa-solid fa-moon text-hondaRed text-2xl mb-3"></i>
+                    <h3 class="font-heading font-bold text-lg uppercase mb-1">Noční jízdy</h3>
+                    <p class="text-gray-400 text-sm">Po domluvě jízdy za umělého osvětlení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNIKA -->
+    <section id="technika" class="bg-asphaltLight py-12 sm:py-20 md:py-28 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-center">
+                <div>
+                    <p
+                        class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">
+                        Vozový
+                        park</p>
+                    <h2 class="font-heading font-bold text-2xl sm:text-3xl md:text-4xl uppercase mb-3 sm:mb-4">Motory
+                        <span class="text-hondaRed">Honda 200</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">Naše motokáry jsou
+                        osazeny špičkovými motory Honda 200
+                        s výkonem 6,5k. Díky automatické odstředivé spojce je ovládání maximálně jednoduché – ovládáte
+                        pouze brzdu a plyn. Maximální dosažitelná rychlost je 70 km/h.</p>
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                        <div class="bg-asphaltDark rounded-lg p-4 text-center border border-white/5">
+                            <p class="font-heading font-bold text-2xl text-hondaRed">200</p>
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Honda motor (ccm)</p>
+                        </div>
+                        <div class="bg-asphaltDark rounded-lg p-4 text-center border border-white/5">
+                            <p class="font-heading font-bold text-2xl text-hondaRed">6,5k</p>
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Výkon</p>
+                        </div>
+                        <div class="bg-asphaltDark rounded-lg p-4 text-center border border-white/5">
+                            <p class="font-heading font-bold text-2xl text-hondaRed">70</p>
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">km/h max</p>
+                        </div>
+                        <div class="bg-asphaltDark rounded-lg p-4 text-center border border-white/5">
+                            <p class="font-heading font-bold text-2xl text-hondaRed">6</p>
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Motokár na trati</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden">
+                    <img src="images/IMG_0482.JPG" alt="Motokára Honda na trati PSKART"
+                        class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENÍK -->
+    <section id="cenik" class="py-12 sm:py-20 md:py-28 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-14">
+                <p class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">
+                    Kolik to
+                    stojí</p>
+                <h2 class="font-heading font-bold text-2xl sm:text-3xl md:text-4xl uppercase">Ceník <span
+                        class="text-hondaRed">jízd</span></h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8 sm:mb-12">
+                <!-- Jednotlivci -->
+                <div class="bg-asphaltLight rounded-xl p-4 sm:p-6 border border-white/5">
+                    <div class="text-center mb-6">
+                        <i class="fa-solid fa-user text-hondaRed text-2xl mb-2"></i>
+                        <h3 class="font-heading font-bold text-xl uppercase">Jednotlivci</h3>
+                        <p class="text-gray-500 text-sm">Veřejné jízdy</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-white/5">
+                            <div>
+                                <p class="font-heading font-semibold">7 minut</p>
+                                <p class="text-gray-500 text-xs">Zkušební jízda</p>
+                            </div>
+                            <p class="font-heading font-bold text-xl text-hondaRed">150 Kč</p>
+                        </div>
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-white/5">
+                            <div>
+                                <p class="font-heading font-semibold">14 minut</p>
+                                <p class="text-gray-500 text-xs">Standardní jízda</p>
+                            </div>
+                            <p class="font-heading font-bold text-xl text-hondaRed">280 Kč</p>
+                        </div>
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-hondaRed/30 relative">
+                            <span
+                                class="absolute top-0 right-0 bg-hondaRed text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded-bl-lg">Výhodné</span>
+                            <div>
+                                <p class="font-heading font-semibold">70 minut</p>
+                                <p class="text-gray-500 text-xs">Permanentka</p>
+                            </div>
+                            <p class="font-heading font-bold text-xl text-hondaRed">1 300 Kč</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Privátní pronájem -->
+                <div class="bg-asphaltLight rounded-xl p-4 sm:p-6 border border-hondaRed/20 relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-hondaRed rounded-t-xl"></div>
+                    <div class="text-center mb-6">
+                        <i class="fa-solid fa-building text-hondaRed text-2xl mb-2"></i>
+                        <h3 class="font-heading font-bold text-xl uppercase">Privátní pronájem</h3>
+                        <p class="text-gray-500 text-sm">Exkluzivní dráha + 5 motokár</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-white/5">
+                            <p class="font-heading font-semibold">1 hodina</p>
+                            <p class="font-heading font-bold text-xl text-hondaRed">4 900 Kč</p>
+                        </div>
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-white/5">
+                            <p class="font-heading font-semibold">2 hodiny</p>
+                            <p class="font-heading font-bold text-xl text-hondaRed">9 600 Kč</p>
+                        </div>
+                        <div
+                            class="flex justify-between items-center bg-asphaltDark rounded-lg px-4 py-3 border border-white/5">
+                            <p class="font-heading font-semibold">3 hodiny</p>
+                            <p class="font-heading font-bold text-xl text-hondaRed">14 200 Kč</p>
+                        </div>
+                        <p class="text-center text-gray-500 text-sm pt-1">Dlouhodobý pronájem dle individuální domluvy
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bannery služeb -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto">
+                <div class="bg-asphaltLight rounded-lg p-5 text-center border border-white/5">
+                    <i class="fa-solid fa-people-group text-hondaRed text-xl mb-2"></i>
+                    <h4 class="font-heading font-bold uppercase mb-1">Teambuildingy</h4>
+                    <p class="text-gray-400 text-sm">Program na míru pro váš tým.</p>
+                </div>
+                <div class="bg-asphaltLight rounded-lg p-5 text-center border border-white/5">
+                    <i class="fa-solid fa-briefcase text-hondaRed text-xl mb-2"></i>
+                    <h4 class="font-heading font-bold uppercase mb-1">Firemní akce</h4>
+                    <p class="text-gray-400 text-sm">Pronájem celého areálu.</p>
+                </div>
+                <div class="bg-asphaltLight rounded-lg p-5 text-center border border-white/5">
+                    <i class="fa-solid fa-utensils text-hondaRed text-xl mb-2"></i>
+                    <h4 class="font-heading font-bold uppercase mb-1">Noční jízdy + Catering</h4>
+                    <p class="text-gray-400 text-sm">Umělé osvětlení a pohoštění.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie" class="bg-asphaltLight py-12 sm:py-20 md:py-28 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-14">
+                <p class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">
+                    Atmosféra</p>
+                <h2 class="font-heading font-bold text-2xl sm:text-3xl md:text-4xl uppercase">Galerie <span
+                        class="text-hondaRed">z
+                        trati</span></h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+                <div class="rounded-lg overflow-hidden md:row-span-2 aspect-[4/3] md:aspect-auto">
+                    <img src="images/P1030162.JPG" alt="Motokárová trať PSKART"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030203.JPG" alt="Jezdci na trati PSKART"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030013.JPG" alt="Závodní akce PSKART"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030020.JPG" alt="Motokáry v akci"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030087.JPG" alt="Atmosféra na dráze PSKART"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030014.JPG" alt="Příprava na start"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030015.JPG" alt="Jezdci na startu"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="images/P1030049.JPG" alt="Závodní atmosféra PSKART"
+                        class="gallery-img w-full h-full object-cover cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT & REZERVACE -->
+    <section id="kontakt" class="py-12 sm:py-20 md:py-28 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-14">
+                <p class="text-hondaRed font-heading font-semibold uppercase tracking-widest text-xs sm:text-sm mb-2">
+                    Přijeďte k
+                    nám</p>
+                <h2 class="font-heading font-bold text-2xl sm:text-3xl md:text-4xl uppercase">Kontakt & <span
+                        class="text-hondaRed">Rezervace</span></h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-10">
+                <!-- Levý sloupec -->
+                <div class="space-y-6 min-w-0">
+
+                    <div>
+                        <h3 class="font-heading font-bold text-lg uppercase mb-3"><i
+                                class="fa-solid fa-phone text-hondaRed mr-1"></i> Kontaktní údaje</h3>
+                        <div class="space-y-2 text-sm">
+                            <a href="mailto:motokary@seznam.cz"
+                                class="flex items-center gap-2 text-gray-300 hover:text-hondaRed transition-colors"><i
+                                    class="fa-solid fa-envelope text-hondaRed w-4"></i> motokary@seznam.cz</a>
+                            <a href="tel:+420603517006"
+                                class="flex items-center gap-2 text-gray-300 hover:text-hondaRed transition-colors"><i
+                                    class="fa-solid fa-phone text-hondaRed w-4"></i> +420 603 517 006</a>
+                            <a href="tel:+420602508866"
+                                class="flex items-center gap-2 text-gray-300 hover:text-hondaRed transition-colors"><i
+                                    class="fa-solid fa-phone text-hondaRed w-4"></i> +420 602 50 88 66</a>
+                            <p class="flex items-center gap-2 text-gray-300"><i
+                                    class="fa-solid fa-location-dot text-hondaRed w-4"></i> Odstavná plocha letiště
+                                Mošnov</p>
+                            <p class="flex items-center gap-2 text-gray-500 text-xs"><i
+                                    class="fa-solid fa-map-pin text-hondaRed/50 w-4"></i> GPS: 49.709541, 18.112536
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg uppercase mb-3"><i
+                                class="fa-solid fa-clock text-hondaRed mr-1"></i> Otevírací doba</h3>
+                        <div class="bg-asphaltLight rounded-lg border border-white/5 overflow-hidden">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-white/5">
+                                        <th
+                                            class="text-left px-4 py-2 font-heading font-semibold uppercase text-gray-400 text-xs">
+                                            Den</th>
+                                        <th
+                                            class="text-right px-4 py-2 font-heading font-semibold uppercase text-gray-400 text-xs">
+                                            Hodiny</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-white/5">
+                                        <td class="px-4 py-2">Pondělí – Pátek</td>
+                                        <td class="text-right px-4 py-2 font-heading font-semibold text-hondaRed">
+                                            15:30
+                                            – 19:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2">Sobota – Neděle</td>
+                                        <td class="text-right px-4 py-2 font-heading font-semibold text-hondaRed">
+                                            13:00
+                                            – 19:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="bg-asphaltLight rounded-lg p-3 sm:p-4 border border-blue-500/20">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-blue-400 mt-0.5"></i>
+                            <div>
+                                <p class="font-heading font-semibold text-sm uppercase mb-1">Pozor na obsazenost!
+                                </p>
+                                <p class="text-gray-400 text-sm mb-3">Dráha je občas obsazená soukromými
+                                    rezervacemi.
+                                    Ověřte si aktuální dostupnost na naší facebookové stránce.</p>
+                                <a href="https://www.facebook.com/motokaryalbr/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-heading font-semibold text-sm uppercase px-4 py-2 rounded transition-all hover:scale-105"><i
+                                        class="fa-brands fa-facebook-f"></i> Sledovat na Facebooku</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg uppercase mb-3"><i
+                                class="fa-solid fa-route text-hondaRed mr-1"></i> Jak se k nám dostanete</h3>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="bg-asphaltLight rounded-lg p-3 border border-white/5">
+                                <p class="font-heading font-semibold text-white text-sm uppercase mb-1">Z Ostravy:
+                                </p>
+                                <p>Sjet u dvou vodojemů do Petřvaldu, kolem hospody dolů na Petřvaldík a odtud lesní
+                                    cestou na Albrechtičky.</p>
+                            </div>
+                            <div class="bg-asphaltLight rounded-lg p-3 border border-white/5">
+                                <p class="font-heading font-semibold text-white text-sm uppercase mb-1">Z
+                                    Albrechtiček:
+                                </p>
+                                <p>Od místního vodojemu úzkou asfaltkou cca 1 km k naší půjčovně.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pravý sloupec -->
+                <div class="space-y-6 min-w-0 overflow-hidden">
+                    <div class="bg-asphaltLight rounded-xl p-4 sm:p-6 border border-white/5 overflow-hidden">
+                        <h3 class="font-heading font-bold text-base sm:text-lg uppercase mb-3 sm:mb-5"><i
+                                class="fa-solid fa-calendar-check text-hondaRed mr-1"></i> Poptávkový formulář</h3>
+                        <form id="reservation-form" class="space-y-3">
+                            <div>
+                                <label for="name" class="block text-sm text-gray-400 mb-1">Jméno a příjmení</label>
+                                <input type="text" id="name" name="name" required placeholder="Jan Novák"
+                                    class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-hondaRed transition-colors text-sm">
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label for="email" class="block text-sm text-gray-400 mb-1">E-mail</label>
+                                    <input type="email" id="email" name="email" required placeholder="email@example.com"
+                                        class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-hondaRed transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm text-gray-400 mb-1">Telefon</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789"
+                                        class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-hondaRed transition-colors text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Preferovaný datum</label>
+                                <div id="date-strip" class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"></div>
+                                <input type="hidden" id="date" name="date">
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label for="time" class="block text-sm text-gray-400 mb-1">Preferovaný
+                                        čas</label>
+                                    <select id="time" name="time"
+                                        class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white focus:outline-none focus:border-hondaRed transition-colors text-sm appearance-none">
+                                        <option value="" class="text-gray-600">Vyberte...</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="13:30">13:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="other">Jiný čas</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="persons" class="block text-sm text-gray-400 mb-1">Počet osob</label>
+                                    <input type="number" id="persons" name="persons" min="1" max="30" placeholder="4"
+                                        class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-hondaRed transition-colors text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm text-gray-400 mb-1">Doplňující
+                                    zpráva</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Máte speciální požadavky?"
+                                    class="w-full bg-asphaltDark border border-white/10 rounded px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-hondaRed transition-colors text-sm resize-none"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-hondaRed hover:bg-red-700 text-white font-heading font-bold text-lg uppercase px-6 py-3 rounded transition-all hover:scale-[1.02] flex items-center justify-center gap-2"><i
+                                    class="fa-solid fa-paper-plane"></i> Odeslat poptávku</button>
+                        </form>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-white/5 aspect-video">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2563.5!2d18.112536!3d49.709541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDQyJzM0LjMiTiAxOMKwMDYnNDUuMSJF!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Mapa PSKART"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč fotografií">
+        <button id="lb-close" class="lb-close" aria-label="Zavřít">&times;</button>
+        <button id="lb-prev" class="lb-nav lb-prev" aria-label="Předchozí"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <button id="lb-next" class="lb-nav lb-next" aria-label="Další"><i
+                class="fa-solid fa-chevron-right"></i></button>
+        <div id="lb-container" class="lb-container">
+            <img id="lb-img" class="lb-img" src="" alt="Fotografie PSKART" draggable="false">
+        </div>
+        <p id="lb-counter" class="lb-counter"></p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-asphaltDark border-t border-white/5 py-8 sm:py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div>
+                    <img src="images/pskart-logo-small2.png" alt="PSKART" class="h-8 mb-3">
+                    <p class="text-gray-500 text-sm">Půjčovna motokár na odstavné ploše letiště Mošnov.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold uppercase text-sm tracking-wider mb-3">Odkazy</h4>
+                    <nav class="flex flex-col gap-1">
+                        <a href="#about" class="text-gray-400 hover:text-hondaRed transition-colors text-sm">O nás</a>
+                        <a href="#technika"
+                            class="text-gray-400 hover:text-hondaRed transition-colors text-sm">Technika</a>
+                        <a href="#cenik" class="text-gray-400 hover:text-hondaRed transition-colors text-sm">Ceník</a>
+                        <a href="#galerie"
+                            class="text-gray-400 hover:text-hondaRed transition-colors text-sm">Galerie</a>
+                        <a href="#kontakt"
+                            class="text-gray-400 hover:text-hondaRed transition-colors text-sm">Kontakt</a>
+                    </nav>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold uppercase text-sm tracking-wider mb-3">Kontakt</h4>
+                    <div class="space-y-1 text-gray-400 text-sm">
+                        <p>motokary@seznam.cz</p>
+                        <p>+420 603 517 006</p>
+                        <p>+420 602 50 88 66</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold uppercase text-sm tracking-wider mb-3">Otevírací doba</h4>
+                    <div class="space-y-1 text-gray-400 text-sm">
+                        <p>Po – Pá: <span class="text-white">15:30 – 19:00</span></p>
+                        <p>So – Ne: <span class="text-white">13:00 – 19:00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/5 pt-4 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3">
+                <p class="text-gray-600 text-[10px] sm:text-xs text-center md:text-left">&copy; 2026 PSKART – Půjčovna
+                    motokár Mošnov-Albrechtičky. Všechna
+                    práva vyhrazena.</p>
+                <p class="text-gray-600 text-[10px] sm:text-xs text-center md:text-left">Provozovatel: Petr Sklenák |
+                    IČO: 68337671 | Sídlo: Albrechtičky 742 55
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

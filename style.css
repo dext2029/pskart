@@ -1,0 +1,316 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.hero-bg {
+    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 0.8)),
+        url('images/obrazek-v-ramecku.png') center/cover no-repeat;
+}
+
+.nav-scrolled {
+    background: rgba(11, 12, 16, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-img {
+    transition: transform 0.4s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile gallery: fixed aspect ratio for consistent grid */
+@media (max-width: 767px) {
+    .gallery-img {
+        aspect-ratio: 4/3;
+    }
+
+    .gallery-img:hover {
+        transform: none;
+    }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+body.lb-open {
+    overflow: hidden;
+}
+
+.lb-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.lb-container.zoomed {
+    cursor: grab;
+}
+
+.lb-container.zoomed.dragging {
+    cursor: grabbing;
+}
+
+.lb-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.lb-close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    z-index: 110;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.lb-close:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.lb-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 110;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    transition: opacity 0.2s, background 0.2s;
+}
+
+.lb-nav:hover {
+    opacity: 1;
+    background: rgba(228, 0, 43, 0.5);
+}
+
+.lb-prev {
+    left: 16px;
+}
+
+.lb-next {
+    right: 16px;
+}
+
+.lb-counter {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+    .lb-nav {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+
+    .lb-prev {
+        left: 6px;
+    }
+
+    .lb-next {
+        right: 6px;
+    }
+
+    .lb-img {
+        max-width: 96vw;
+        max-height: 75vh;
+    }
+
+    .lb-close {
+        top: max(8px, env(safe-area-inset-top));
+        right: 12px;
+        font-size: 2rem;
+    }
+
+    .lb-counter {
+        bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .date-chip {
+        padding: 6px 10px;
+        min-width: 54px;
+    }
+
+    .date-chip .chip-date {
+        font-size: 1.05rem;
+    }
+}
+
+/* ===== DATE STRIP ===== */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.date-chip {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0b0c10;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 62px;
+    user-select: none;
+}
+
+.date-chip:hover {
+    border-color: rgba(228, 0, 43, 0.4);
+}
+
+.date-chip.active {
+    background: #E4002B;
+    border-color: #E4002B;
+}
+
+.date-chip .chip-day {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1;
+}
+
+.date-chip.active .chip-day {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.date-chip.weekend .chip-day {
+    color: #E4002B;
+}
+
+.date-chip.active.weekend .chip-day {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.date-chip .chip-date {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: white;
+    line-height: 1.2;
+}
+
+.date-chip .chip-month {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1;
+}
+
+.date-chip.active .chip-month {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.date-chip.today {
+    border-color: rgba(228, 0, 43, 0.3);
+}
+
+.date-chip.today .chip-day {
+    color: #E4002B;
+}
+
+.date-chip.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#date-strip {
+    cursor: grab;
+}
+
+.date-chip-custom {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.date-chip-custom:hover {
+    border-color: rgba(228, 0, 43, 0.5);
+}
+
+.date-chip-custom.active {
+    border-style: solid;
+}
